@@ -1,0 +1,52 @@
+﻿.adc-default ul,
+.adc-default li
+{
+    margin  : 0;
+    padding : 0;
+}
+.adc-default ul
+{
+    list-style-type: none;
+}
+.adc-default textarea {
+    width  : 250px;
+    height : 50px;
+}
+
+.adc-default  {
+	width: 100px;
+	height: 150px;
+	position: relative;
+}
+
+#adc_{%= CurrentQuestion.Id %} {
+	max-width: 400px;
+	width: {%= CurrentADC.PropValue("width") %};
+	height: {%= CurrentADC.PropValue("height") %};
+	margin: 0px auto;
+}
+
+svg {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  height: 80%;
+}
+path {
+  stroke: #E13407;
+  stroke-linecap:round;
+  stroke-width: 42;
+  fill:none;
+}
+#sec {
+  stroke: #FFFFFF;
+  stroke-width: 20;
+}
+#min {
+  stroke: #3d601b;
+  stroke-width: 38;
+}
+#hour {
+  stroke: #13441e;
+  stroke-width: 38;
+}

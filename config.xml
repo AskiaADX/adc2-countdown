@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<control xmlns="http://www.askia.com/ADCSchema"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.askia.com/ADCSchema http://www.askia.com/Downloads/dev/schemas/adc2.0/Config.xsd"
+         version="2.0.0"
+         askiaCompat="5.3.3">
+  <info>
+    <name>adc2-countdown</name>
+    <fileName>adc2-countdown</fileName>
+    <guid>928ebb88-b578-46db-bd74-0c25cbb75a6e</guid>
+    <version>1.0.0</version>
+    <date>2015-01-27</date>
+    <description>
+      <![CDATA[
+        Describe your ADC here
+        
+        Tested in:
+          List the browsers name and version where the ADC should work on.
+          
+        Dependencies:
+          - Name of the 3rd party resource. Version. URL 
+          - Name of the 3rd party resource. Version. URL
+        
+        Notes:
+          Special notes about incompatibility or warnings
+      ]]>
+    </description>
+    <author>
+      <![CDATA[
+        Michael <michael@askia.com>,
+      ]]>
+    </author>
+    <company>Askia</company>
+    <helpURL></helpURL>
+    <site></site>
+    <categories>
+      <category>General</category>
+    </categories>
+    <style width="400" height="300"/>
+    <constraints>
+      <constraint on="questions" single="true" multiple="true" numeric="true" date="true" open="true" />
+	  <constraint on="responses" min="1"/>
+	  <constraint on="controls" label="true" />
+    </constraints>
+  </info>
+
+  <outputs defaultOutput="fallback">
+    <output id="fallback">
+      <description><![CDATA[Fallback when the browser doesn't support Javascript]]></description>
+      <condition><![CDATA[Not(Browser.Support("javascript"))]]></condition>
+	  <content fileName="jquery-1.11.1.min.js" type="javascript" mode="share" position="head"/>
+	  <content fileName="default.css" type="css" mode="dynamic" position="head" />
+
+      <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
+	  
+	  <content fileName="default.js" type="javascript" mode="dynamic" position="foot" />
+    </output>
+  </outputs>
+
+  <properties>
+
+    <category id="general" name="General">
+	 <property xsi:type="standardProperty" id="time" name="time" type="number" mode="static">
+        <description>
+          <![CDATA[
+         time
+        ]]>
+        </description>
+        <value>10</value>
+      </property>  
+	   <property xsi:type="standardProperty" id="width" name="width" type="string" mode="dynamic">
+        <description>
+          <![CDATA[
+          Using HTML 5, in modern browser.
+          Helper text shows in the input when it's empty.
+        ]]>
+        </description>
+        <value>100px</value>
+      </property>
+	  <property xsi:type="standardProperty" id="height" name="height" type="string" mode="dynamic">
+        <description>
+          <![CDATA[
+          Using HTML 5, in modern browser.
+          Helper text shows in the input when it's empty.
+        ]]>
+        </description>
+        <value>100px</value>
+      </property>
+	  <property xsi:type="standardProperty" id="preventNext" name="Prevent Next" type="boolean" mode="static">
+        <description>
+          <![CDATA[Whether the control prevents going next]]>
+        </description>
+        <value>false</value>
+      </property>
+	  <property xsi:type="standardProperty" id="hideDigital" name="Hide digital display" type="boolean" mode="static">
+        <description>
+          <![CDATA[Whether the control hides the digital display]]>
+        </description>
+        <value>false</value>
+      </property>
+    </category>
+    
+  </properties>
+</control>
